@@ -1,0 +1,56 @@
+
+<body class="bg">
+  <div class="Main">
+    <nav class="navbar navbar-expand-md   " style="background-color: rgba(238, 234, 241, 0.589);">
+      <a href="#" class="navbar-brand" style="color: rgb(14, 12, 12); font-weight: 700;" routerLink="/userhomepage">Book Event</a>
+      <button class="navbar-toggler" data-togglr="collapse"  data-target="#navcontent">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+       <div class="collapse navbar-collapse" id="nacontent">
+      <ul class="navbar-nav">
+          
+           <li class="nav-item">
+              <a class="nav-link" style="color: rgb(14, 12, 12); font-size: large; font-weight: 700;"  routerLink="/viewbooking">View Book Event</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: rgb(14, 12, 12); font-size: large; font-weight: 700;"  routerLink="/feedback">Feedback</a>
+        </li>
+          <li class="nav-item ">
+              <a class="nav-link "  (click)="logout()" style="color: rgb(17, 15, 15); margin-left: 330px; font-size: large; font-weight: 700;"  >Logout</a>
+          </li>
+  
+      </ul>
+  </div>
+  </nav>
+      </div>
+      <div class="container flex-center" style="margin-top: 100px;">
+      <div class="card shadow border mt-5 mb-5">
+      <table  class="table table-striped table-hover" style="border-radius: 20px; ">
+        <thead class="thead-dark">
+          <tr style="height: 70px; justify-content: center;">
+            <th scope="col">Event Name</th>
+            <th scope="col">Event Time</th>
+            <th scope="col">Event Date</th>
+            <th scope="col">Price</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+      
+          <tr *ngFor="let event of events">
+            <td>{{event.eventName}}</td>
+            <td>{{event.eventTime}}</td>
+            <td>{{event.eventDate}}</td>
+      
+            <td>{{event.themePrice+event.addOnPrice}} </td>
+            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="edit(event.eventid)" >Edit</button></td>
+        
+            <td> <button type="button" class="btn btn-danger" (click)="deleteEvent(event)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      </div>
+    </body>
+  

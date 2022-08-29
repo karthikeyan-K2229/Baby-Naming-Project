@@ -1,0 +1,24 @@
+
+body{
+    background-color: #7B93AA;
+    background-image: linear-gradient(rgba(46, 46, 155, 0.774), rgba(172, 172, 167, 0.5)),url('../../assets/image/Bg_admin.jpg');
+    
+    top: 0; 
+    left: 0; 
+   height: 1000px;
+      
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+   background-position: center; /* Center the image */
+   background-repeat: no-repeat; /* Do not repeat the image */
+   background-size: cover; /* Resize the background image to cover the entire container */
+ }
+ input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+ 
+input{
+  height: 45px;
+  width: 320px;
+}

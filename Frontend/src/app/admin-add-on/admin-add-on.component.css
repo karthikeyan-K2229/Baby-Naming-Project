@@ -1,0 +1,125 @@
+body{
+  background-color: #7B93AA;
+  background-image: linear-gradient(rgba(48, 48, 134, 0.5), rgba(172, 172, 167, 0.5)),url('../../assets/image/Bg_admin.jpg');
+
+  top: 0; 
+  left: 0; 
+    
+ 
+  min-width: 100%;
+  min-height: 100%;
+ background-position: center;
+ background-repeat: no-repeat; 
+ background-size: cover; 
+ 
+}
+
+
+body{
+  background-color: #7B93AA;
+  
+  
+  top: 0; 
+  left: 0; 
+    
+  
+  min-width: 100%;
+  min-height: 100%;
+ background-position: center; 
+ background-repeat: no-repeat; 
+ background-size: cover; 
+ 
+}
+#anchor::after{
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width .3;
+}
+#anchor:hover::after{
+  width: 100%;
+  transition: width .3s;}
+  #bt1{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    margin-left: 30%;
+    margin-top: 10%;
+  }
+  
+  #bt1:after {
+    content: '+';
+    position: absolute;
+    opacity: 0;  
+    top: 5px;
+    right: -20px;
+    transition: 0.5s;
+  }
+  #bt1:hover{
+    padding-right: 24px;
+    padding-left:8px;
+  }
+  #bt1:hover:after {
+    opacity: 1;
+    right: 10px;
+  }
+  #form-addon{
+    background-color: #dbcfcf9d;
+    width: 650px;
+    margin-top: 5%;
+    padding: 15px;
+    border-radius: 30px;
+    
+  }
+  h1{
+    margin-left: 20%;
+    font-family: Ubuntu;
+   
+  }
+  #input-box{
+    margin-bottom: 20px;
+    
+  }
+  #card{
+    margin-left: 10%;
+    margin-bottom: 30px;
+  }
+  img{
+    border-radius: 30px;
+  }
+  .card{
+    border-radius: 30px;
+height: 330px;
+width: 300px;
+  }
+  html { overflow-y: scroll; overflow-x: hidden; }
+body { position: absolute; }
+.navbar-brand{
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.nav-item{
+  margin-left: 40px;
+  margin-right: 20px;
+}
+.navbar
+{
+    
+
+margin-bottom: 50px;
+
+}
+#addOnName{
+  height: 50px;
+}
+#addOnPrice{
+  height: 50px;
+ 
+}
+#addOnImage{
+  height: 50px;
+ 
+}

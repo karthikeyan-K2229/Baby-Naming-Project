@@ -1,0 +1,165 @@
+
+  
+ 
+   <body class="bg">
+    <nav class="navbar navbar-expand-md   " style="background-color: rgba(238, 234, 241, 0.589);">
+      <a href="#" class="navbar-brand" style="color: rgb(14, 12, 12); font-weight: 700;" routerLink="/userhomepage">Book Event</a>
+      <button class="navbar-toggler" data-togglr="collapse"  data-target="#navcontent">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+       <div class="collapse navbar-collapse" id="nacontent">
+      <ul class="navbar-nav">
+          
+           <li class="nav-item">
+              <a class="nav-link" style="color: rgb(14, 12, 12); font-size: large; font-weight: 700;"  routerLink="/viewbooking">View Book Event</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: rgb(14, 12, 12); font-size: large; font-weight: 700;"  routerLink="/feedback">Feedback</a>
+        </li>
+          <li class="nav-item ">
+              <a class="nav-link "  (click)="logout()" style="color: rgb(17, 15, 15); margin-left: 330px; font-size: large; font-weight: 700;"  >Logout</a>
+          </li>
+  
+      </ul>
+  </div>
+  </nav>
+    
+    <div class="f" style="background-color:#e0dcdcb2;border-radius: 35px; height:750px; width: 1350px; margin-left: 350px; margin-right: 300px;">
+      <form  [formGroup]="Booksevent" (ngSubmit)="BookEvent()">
+ 
+      <h1 style="position: center; font-style:italic; margin-left:550px">Book Event</h1>
+    <div class="row">
+      <div class="col-5">
+        
+            <div class="form-group col-lg-6 " id="input-box">
+                
+                <!--<input type="text" class="form-control input-normal" style="border-radius: 10px;background-color: #d3d8e2; font-family: 'Ubuntu'; color: black;" placeholder="Enter theme name" id="themeName" name="themeName"[(ngModel)]="addmenu.themeName"/>-->
+
+
+                <input type="text" class="form-control" placeholder="Name" style="margin-left:75px;width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black;"formControlName="eventName" id="eventName" formControlName="eventName" />
+                <div *ngIf="Booksevent.get('eventName').invalid && Booksevent.controls.eventName.touched "
+                class="form-group" style="margin-left:75px;width:400px; height:50px;"class="alert alert-danger" >
+                <span style="color: red;" *ngIf="Booksevent.get('eventName').hasError('required')">Event Name is Required !</span>
+              </div>
+            </div>
+            <div class="form-group col-lg-6 " id="input-box">
+                
+              <input type="text" class="form-control" placeholder="Enter applicant name"style="margin-left:75px;width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black;" formControlName="applicantName"id="applicantName"  formControlName="applicantName"/>
+              <div *ngIf="Booksevent.get('applicantName').invalid && Booksevent.controls.applicantName.touched "
+              class="form-group" style="margin-left:75px;width:400px; height:50px;"class="alert alert-danger">
+              <span style="color: red;" *ngIf="Booksevent.get('applicantName').hasError('required')"> Name is Required !</span>
+            </div>
+              </div>
+            <div class="form-group col-lg-6 " id="input-box">
+                
+              <input  type="text" class="form-control" placeholder="Enter applicant address" style="margin-left:75px;width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black;"formControlName="applicantAddress" id="applicantAddress"  formControlName="applicantAddress"/>
+              <div *ngIf="Booksevent.get('applicantAddress').invalid && Booksevent.controls.applicantAddress.touched "
+              class="form-group" style="margin-left:75px;width:400px; height:50px;"class="alert alert-danger">
+              <span style="color: red;" *ngIf="Booksevent.get('applicantAddress').hasError('required')"> Address is Required !</span>
+             </div>
+              </div>
+              <div class="form-group col-lg-6 " id="input-box">
+                
+                <input type="tel"   class="form-control" placeholder="Enter applicant Mobile Number" style="margin-left:75px;width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black;"formControlName="applicantMobileNo" id="applicantMobileNo" formControlName="applicantMobileNo"/>
+        <div *ngIf="Booksevent.get('applicantMobileNo').invalid && Booksevent.controls.applicantMobileNo.touched "
+        class="form-group"style="margin-left:75px;width:400px; height:50px;" class="alert alert-danger">
+        <span style="color: red;" *ngIf="Booksevent.get('applicantMobileNo').hasError('required')"> phone number is Required !</span>
+        <span  style="color:red;" *ngIf="Booksevent.get('applicantMobileNo').hasError('pattern')">
+          Invalid mobile number!
+        </span>
+       </div></div>
+       <div class="form-group col-lg-6 " id="input-box">
+                
+        <input   class="form-control" placeholder="Enter applicant email" style="margin-left:75px;width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black;"formControlName="applicantEmailId" id="applicantEmailId"  formControlName="applicantEmailId"/>
+        <div *ngIf="Booksevent.get('applicantEmailId').invalid && Booksevent.controls.applicantEmailId.touched "
+        class="form-group" style="margin-left:75px;width:400px; height:50px;"class="alert alert-danger">
+        <span style="color: red;" *ngIf="Booksevent.get('applicantEmailId').hasError('required')"> email is Required !</span>
+        <span style="color: red;" *ngIf="Booksevent.get('applicantEmailId').hasError('pattern')">  Invalid Email !</span>
+       </div>
+            
+      </div>
+      <div class="form-group col-lg-6 " id="input-box">
+                
+        <input  type="text" class="form-control" placeholder="Location" formControlName="eventAddress" id="eventAddress" style="margin-left:75px;width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black;" formControlName="eventAddress"/>
+        <div *ngIf="Booksevent.get('eventAddress').invalid && Booksevent.controls.eventAddress.touched "
+        class="form-group"style="margin-left:75px;width:400px; height:50px;" class="alert alert-danger">
+        <span style="color: red;" *ngIf="Booksevent.get('eventAddress').hasError('required')"> location is Required !</span>
+       </div>
+            
+      </div></div>
+              
+      <div class="col-6">
+        
+        <div class="form-group col-lg-6 " id="input-box">
+                
+          <input  type="date" min="{{currentdate  | date:'yyyy-MM-dd'}}" style="width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black; margin-left: 200px;" class="form-control" placeholder="Enter the date of the event" formControlName="eventDate" id="eventDate"  formControlName="eventDate"/>
+          <div *ngIf="Booksevent.get('eventDate').invalid && Booksevent.controls.eventDate.touched "
+          class="form-group" style="width:400px; height:50px;margin-left: 200px;"class="alert alert-danger">
+          <span style="color: red;" *ngIf="Booksevent.get('eventDate').hasError('required')"> Date is Required !</span>
+         </div>
+        </div>
+        <div class="form-group col-lg-6 " id="input-box">
+            
+          <input  type="time" class="form-control" style="width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black; margin-left: 200px;"placeholder="Enter the time of the event" formControlName="eventTime" id="eventTime"  formControlName="eventTime"/>
+          <div *ngIf="Booksevent.get('eventTime').invalid && Booksevent.controls.eventTime.touched "
+          class="form-group" style="width:400px; height:50px;margin-left: 200px;"class="alert alert-danger">
+          <span style="color: red;" *ngIf="Booksevent.get('eventTime').hasError('required')"> Time is Required !</span>
+         </div>
+          </div>
+        <div class="form-group col-lg-6 " id="input-box">
+            
+          <input  type="number" class="form-control" style="width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black; margin-left: 200px;"placeholder="Enter the number of people" formControlName="noOfPeople" id="noOfPeople"  formControlName="noOfPeople"/>
+          <div *ngIf="Booksevent.get('noOfPeople').invalid && Booksevent.controls.noOfPeople.touched "
+          class="form-group" style="width:400px; height:50px;margin-left: 200px;"class="alert alert-danger">
+          <span style="color: red;" *ngIf="Booksevent.get('noOfPeople').hasError('required')"> count is Required !</span>
+         </div>
+          </div>
+        <div class="form-group col-lg-6 " id="input-box">
+            
+          <input  type="number" class="form-control" placeholder="Enter the quantity of veg items" style="width:400px; height:50px; margin-left: 200px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black;"formControlName="quantityOfVeg" id="quantityOfVeg"  formControlName="quantityOfVeg"/>
+          <div *ngIf="Booksevent.get('quantityOfVeg').invalid && Booksevent.controls.quantityOfVeg.touched "
+          class="form-group" style="width:400px; height:50px;margin-left: 200px;"class="alert alert-danger">
+          <span style="color: red;width:400px; height:50px;" *ngIf="Booksevent.get('quantityOfVeg').hasError('required')"> quantity of veg items is Required !</span>
+         </div>
+        </div>
+        <div class="form-group col-lg-6 " id="input-box">
+            
+          <input  type="number" class="form-control" style="width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black; margin-left: 200px;"placeholder="Enter the quantity of nonveg items" formControlName="quantityOfNonVeg" id="quantityOfNonVeg"  formControlName="quantityOfNonVeg"/>
+  <div *ngIf="Booksevent.get('quantityOfNonVeg').invalid && Booksevent.controls.quantityOfNonVeg.touched "
+  class="form-group" style="width:400px; height:50px;margin-left: 200px;" class="alert alert-danger">
+  <span style="color: red;width:400px; height:50px; " *ngIf="Booksevent.get('quantityOfNonVeg').hasError('required')"> quantity of non veg items is Required !</span>
+ </div>
+      </div>
+        <div class="form-group " id="input-box" style="margin-bottom: 100px;">
+          <button  [disabled]="Booksevent.invalid" class="btn btn-primary me-md-2" type="submit" style="margin-bottom: 50px; width:200px;margin-top:50px;margin-left: 110px; height:50px;background: linear-gradient(to right, rgba(11, 11, 88, 0.925) , rgba(17, 13, 80, 0.493) );font-family:Ubuntu; color: white;border-radius: 20px;" id="bt1">Book Event</button>
+        </div>
+    
+        
+      </div>
+      
+        <table class="content-table"style="width:500px" >
+          <thead>
+            <tr>
+              <th scope="col">addOn name</th>
+              <th scope="col">Price</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+             
+            
+            
+            <tr  *ngFor="let addon of ad1" style="background-color: white;">
+              <td>{{addon.name}} </td>
+              <td> {{addon.price | currency: 'INR'}}</td>
+              <td >  <input type="checkbox" (change)="UpdateTotalPrice(addon.price,$event)"></td>
+            </tr>
+          </tbody>
+        </table>
+      
+    </div> 
+ 
+  
+</form>
+  
+</div></body>

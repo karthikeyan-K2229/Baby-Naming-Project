@@ -1,0 +1,32 @@
+
+  .navbar-brand{
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  .nav-item{
+    margin-left: 40px;
+    margin-right: 20px;
+  }
+  
+  body{height: 100vh;display: flex;
+    justify-content: center;
+    align-items:center;
+    background: linear-gradient(rgba(6, 6, 94, 0.801), rgba(124, 124, 122, 0.678));
+    background-repeat: no-repeat;
+background-size: cover;}
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+ 
+input{
+  height: 50px;
+  width: 410px;
+}
+
+.card{width: 500px;padding: 80px 50px;position: relative;border-radius: 20px;box-shadow: 0 5px 25px rgba(0,0,0,0.2)}
+.card h3{color: #111;margin-bottom: 90px;border-left: 5px solid red;padding-left: 10px;line-height: 1em}
+.inputbox{margin-bottom: 50px}.inputbox input{position:absolute;width: 450px;background:transparent}
+.inputbox input:focus{color: #495057;background-color: #fff;border-color: #e54b38;outline: 0;box-shadow: none}
+.inputbox span{position: relative;top: 7px;left: 1px;padding-left: 10px;display: inline-block;transition: 0.5s}
+.inputbox input:focus ~ span{transform: translateX(-10px) translateY(-32px);font-size: 12px}
+.inputbox input:valid ~ span{transform: translateX(-10px) translateY(-32px);font-size: 12px}

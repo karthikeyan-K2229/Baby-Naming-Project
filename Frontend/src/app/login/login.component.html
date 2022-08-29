@@ -1,0 +1,79 @@
+
+    <section class="vh-100  backGround" >
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col col-xl-10">
+            <div class="card">
+              <div class="row g-0">
+                <div class="col-md-6 col-lg-5 d-none d-md-block Card">
+                  <img src="https://images.unsplash.com/photo-1551972873-b7e8754e8e26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGJhYnklMjBiaXJ0aGRheSUyMHBhcnR5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                    alt="login form" class="img-fluid" />
+                </div>
+                <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                  <div class="card-body p-4 p-lg-5 text-black">
+    
+                    <form [formGroup]="loginForm" (ngSubmit)="userLogin()">
+                      <div class="d-flex align-items-center mb-3 pb-1">
+                        <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                        <span class="h1 fw-bold mb-0">Login</span>
+                      </div>
+    
+                      <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+    
+                      <div class="form-outline mb-4">
+                      <div class="form-group">
+                        <input type="email" id="email" Placeholder="Email address"class="form-control form-control-lg" formControlName="email"  />
+                        <label class="form-label" for="email"></label>
+                        <div *ngIf="loginForm.get('email').invalid && loginForm.controls.email.touched" class="form-group"
+                        class="alert alert-danger">
+                        <span style="color: red;" *ngIf="loginForm.get('email').hasError('required')">
+                          Email is Required!
+                        </span>
+                        <span style="color: red;"
+                          *ngIf="loginForm.get('email').hasError('email') && !loginForm.get('email').hasError('required')">
+                          Invalid Email!
+                        </span>
+                      </div>
+                      </div>
+    
+                      <div class="form-group">
+                        <input type="password" id="password" Placeholder="password" required="" class="form-control form-control-lg" formControlName="password" />
+                        <label class="form-label" for="password"></label>
+                        <div *ngIf="loginForm.get('password').invalid  && loginForm.controls.password.touched" class="form-group"
+              class="alert alert-danger">
+              <span style="color: red;" *ngIf="loginForm.get('password').hasError('required')">
+                 Enter password !
+              </span>
+              <span style="color: red;" *ngIf="loginForm.get('password').hasError('minlength')">
+                password should not contain less than 8 characters !
+              </span>
+      
+              <span style="color: red;" *ngIf="loginForm.get('password').hasError('maxlength')">
+                password exceed more than 16 characters !
+              </span>
+    
+              
+            </div>
+                      </div> </div>
+    
+                      <div class="pt-1 mb-4">
+                        <button class="btn btn-dark btn-lg btn-block" [disabled]="loginForm.invalid" type="submit">Login</button>
+                      </div>
+    
+                     
+                      <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a 
+                          style="color: #393f81;"  routerLink="/registration" >Register here</a></p>
+                    
+                    </form>
+    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>  
+    
+    
+    

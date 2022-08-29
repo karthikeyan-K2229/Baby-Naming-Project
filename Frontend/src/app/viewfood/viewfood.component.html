@@ -1,0 +1,77 @@
+<body >
+  <nav class="navbar navbar-expand-md   " style="background-color: rebeccapurple;">
+    <a routerLink="/addtheme" class="navbar-brand" style="color: white;">Add Theme</a>
+    <button class="navbar-toggler" data-togglr="collapse"  data-target="#navcontent">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+     <div class="collapse navbar-collapse" id="nacontent">
+    <ul class="navbar-nav">
+    
+    <li class="nav-item">
+      <a class="nav-link" style="color: white; font-weight: 600; font-size: large;"  routerLink="/viewtheme"> View  Theme </a>
+  </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color: white; font-weight: 600; font-size: large;"  routerLink="/adminfood"> Add  Food </a>
+    </li>
+  
+  <li class="nav-item">
+    <a class="nav-link" style="color: white; font-weight: 600; font-size: large;"  routerLink="/viewfood"> View  Food </a>
+</li>
+         <li class="nav-item">
+            <a class="nav-link" style="color: white; font-weight: 600; font-size: large;"  routerLink="/addonrouter">  Add Add-ons</a>
+         </li>
+         <li class="nav-item">
+          <a class="nav-link" style="color: white; font-weight: 600; font-size: large;"  routerLink="/viewfeedback"> FeedBack </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color: white; font-weight: 600; font-size: large;"  routerLink="/displayuser"> View  Users </a>
+    </li>
+            <li class="nav-item ">
+              <a class="nav-link "  (click)="logout()" style="color: rgb(17, 15, 15); margin-left: 330px; font-size: large; font-weight: 700;"  >Logout</a>
+          </li>
+
+    </ul>
+</div>
+</nav>
+<table  class="table table-striped">
+  <thead>
+    <tr>
+     
+      <th style="font-style: italic; font-size:x-large; font-weight:500">Food Image</th>
+      <th style="font-style: italic; font-size:x-large; font-weight:500">Food Name</th>
+      <th style="font-style: italic; font-size:x-large; font-weight:500">Price</th>
+      
+     
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let food of users" style="height: 20px; margin-left: 50px;">
+      <!--<td>{{ user.id }}</td>-->
+      <img
+        src={{food.imageurl}} 
+        style="height: 180px; width:300px ;margin-left:50px"
+        
+        alt="..."/>
+      <td style="font-style: italic; font-size:x-large; font-weight:500">{{ food.foodname }}</td>
+      <td style="font-style: italic; font-size:x-large; font-weight:500">{{ food.price  | currency: 'INR'}}</td>
+      
+      
+      <td>
+        <button (click)="updateUser(food.id)" class="btn btn-info">
+          Update
+        </button>
+        
+      </td><td><button
+      (click)="deleteUser(food.id)"
+      class="btn btn-danger"
+      style="margin: left 10px;"
+    >
+      Delete
+    </button></td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+    

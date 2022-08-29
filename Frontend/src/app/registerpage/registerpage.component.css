@@ -1,0 +1,24 @@
+
+
+    .background{
+        background-color: #121113;
+    }
+    .card{
+        margin: 0 auto;
+        float: none;
+        margin-bottom: 10px;
+    }
+    .dropdown
+    {
+        
+        
+        padding: 9px;
+        margin-bottom: 8px;
+        border: 1.5px rgb(250, 242, 242) solid;
+        width: 370px;
+        
+        font-size: medium;
+        font-style: normal;
+        margin-top: 5px;
+        border-color: rgb(146, 134, 134);
+    }

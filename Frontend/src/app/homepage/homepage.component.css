@@ -1,0 +1,35 @@
+
+#navbar-nav{
+    padding: 10px;}
+    .navbar-brand{
+       margin-left: 170px;
+       margin-right: 150px;
+    }
+    .nav-item{
+        margin-left: 140px;
+        margin-right: 130px;
+     }
+ /* .Main{
+    background-color: rgb(141, 141, 196);
+} */
+.form-control
+{
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1.5px rgb(250, 242, 242) solid;
+     width: 400px;
+    border-radius: 25px;
+    font-size: medium;
+    font-style: normal;
+    margin-top: 25px;
+    border-color: black;
+    margin-left: 750px;
+    height: 50px;
+}
+ 
+ .bg{height: 100vh;
+    background-image: url('https://media.istockphoto.com/photos/blue-color-book-cover-pattern-picture-id1170740815?k=20&m=1170740815&s=612x612&w=0&h=cZs8IOdWU6WwOaVP5NlEEm8_T7Z6cI8oNnheIaGv_Rs=') ;
+    
+    background-repeat: no-repeat;
+background-size: cover;}

@@ -1,0 +1,13 @@
+
+
+    .backGround{
+        background-color: #121113;
+    }
+    .card
+    {
+        border-radius: 1rem;
+    }
+    .Card
+    {
+    border-radius: 1rem 0 0 1rem;
+    }

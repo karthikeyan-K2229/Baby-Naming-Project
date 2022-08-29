@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-md   " style="background-color: rgba(238, 234, 241, 0.589);">
+  <a href="#" class="navbar-brand" style="color: rgb(14, 12, 12); font-weight: 700;" routerLink="/userhomepage">Book Event</a>
+  <button class="navbar-toggler" data-togglr="collapse"  data-target="#navcontent">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+   <div class="collapse navbar-collapse" id="nacontent">
+  <ul class="navbar-nav">
+      
+       <li class="nav-item">
+          <a class="nav-link" style="color: rgb(14, 12, 12); font-size: large; font-weight: 700;"  routerLink="/viewbooking">View Book Event</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color: rgb(14, 12, 12); font-size: large; font-weight: 700;"  routerLink="/feedback">Feedback</a>
+    </li>
+      <li class="nav-item ">
+          <a class="nav-link "  (click)="logout()" style="color: rgb(17, 15, 15); margin-left: 330px; font-size: large; font-weight: 700;"  >Logout</a>
+      </li>
+
+  </ul>
+</div>
+</nav>
+    <body>
+    <div class="card" style="margin-top: 20px;"> 
+      <h3>FEEDBACK</h3> <form [formGroup]="Addsfood"  (ngSubmit)="AddTheme()"> 
+        <div class="form-group">
+          <label for="name" class="font-weight-bold"> Name</label>
+          <input type="text" size="50" class="form-control" style="border-radius: 15px; height: 45px;" placeholder="Enter the Name" formControlName="name" id="name" />
+          <div *ngIf="Addsfood.get('name').invalid && Addsfood.controls.name.touched "
+           class="form-group" class="alert alert-danger">
+          <span class="text-danger" *ngIf="Addsfood.get('name').hasError('required')">Name is Required !</span>
+          <span class="text-danger" *ngIf="Addsfood.get('name').hasError('pattern')">Invalid  Food Name!</span>
+           </div>    
+      </div>
+     
+    
+           
+          <div class="form-group">
+            <label class="font-weight-bold" for="rating">FeedBack</label>
+            <select id="rating" class="form-control"  style="border-radius: 15px; height: 45px;
+            width: 410px; ;" formControlName="rating" aria-placeholder="Enter the Rating" id="Rating">
+              <option selected>Select the FeedBack</option>
+              <option>Good</option>
+              <option>satisfy</option>
+              <option>Bad</option>
+            </select>
+            <div *ngIf="Addsfood.get('rating').invalid && Addsfood.controls.rating.touched "
+       class="form-group" class="alert alert-danger">
+      <span class="text-danger" *ngIf="Addsfood.get('rating').hasError('required')">Feedback is Required !</span>
+       </div>
+          </div>
+          <div class="form-group">
+            <label for="feedback" class="font-weight-bold">Tell Us How We Can Improve</label>
+            <textarea class="form-control" formControlName="feedback" id="feedback" name="feedback"
+                rows="3"></textarea>
+        </div>
+
+          
+          <button class="btn btn-danger btn-block" [disabled]="Addsfood.invalid" style="margin-top: 20px; border-radius:15px; height: 45px;">Send</button>
+   </form> </div>
+   
+  </body>
+ 

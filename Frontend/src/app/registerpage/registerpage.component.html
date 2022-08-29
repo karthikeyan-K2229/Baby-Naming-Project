@@ -1,0 +1,147 @@
+
+<section class="vh-100" style="background-color: rgb(17, 15, 15);">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+                <form [formGroup]="RegisterForm" (ngSubmit)="userRegister()">
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      
+                      <div>
+                        <select id="usertype"  class="form-control" [formControlName]="'usertype'">
+                          <option value="">Enter user</option>
+                          <!-- <option value="Admin">Admin</option> -->
+                          <option value="User">User</option>
+                         </select>
+                
+                        <div *ngIf="RegisterForm.get('usertype').invalid && RegisterForm.controls.usertype.touched "
+                          class="form-group" class="alert alert-danger">
+                          <span style="color: red;" *ngIf="RegisterForm.get('usertype').hasError('required')">User Type is Required !</span>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input class="form-control" formControlName="email" placeholder="Enter email" id="email">
+                      <div *ngIf="RegisterForm.get('email').invalid && RegisterForm.controls.email.touched" class="form-group"
+        class="alert alert-danger">
+        <small style="color: red; width: 10px; height: 5px;" *ngIf="RegisterForm.get('email').hasError('required')">
+          Email is Required!
+        </small>
+        <small style="color: red;"
+          *ngIf="RegisterForm.get('email').hasError('email') && !RegisterForm.get('email').hasError('required')">
+          Invalid Email!
+        </small>
+      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input class="form-control" formControlName="name" placeholder="Enter Username" id="name">
+
+      <div *ngIf="RegisterForm.get('name').invalid && RegisterForm.controls.name.touched" class="form-group"
+        class="alert alert-danger">
+        <span style="color: red;" *ngIf="RegisterForm.get('name').hasError('required')">Name is Required !</span>
+        <span *ngIf="RegisterForm.get('name').hasError('pattern')">
+          Enter a valid name!
+        </span>
+      </div>
+                      
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-phone fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input class="form-control" formControlName="phone" placeholder="Enter Mobile Number" id="phone">
+
+      <div style="color: red;" *ngIf="RegisterForm.get('phone').invalid && RegisterForm.controls.phone.touched"
+        class="form-group" class="alert alert-danger">
+        <span *ngIf="RegisterForm.get('phone').hasError('required')">
+          Mobile Number is Required !
+        </span>
+        <span *ngIf="RegisterForm.get('phone').hasError('pattern')">
+          Invalid mobile number!
+        </span>
+      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input class="form-control" type="password" formControlName="password" id="password" placeholder="Password">
+
+      <div *ngIf="RegisterForm.get('password').invalid  && RegisterForm.controls.password.touched" class="form-group"
+        class="alert alert-danger">
+        <span style="color: red;" *ngIf="RegisterForm.get('password').hasError('required')">
+           Enter password !
+        </span>
+        <span style="color: red;" *ngIf="RegisterForm.get('password').hasError('minlength')">
+          password should not contain less than 8 characters !
+        </span>
+
+        <span style="color: red;" *ngIf="RegisterForm.get('password').hasError('maxlength')">
+          password exceed more than 16 characters !
+        </span>
+      </div>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input class="form-control" type="password" formControlName="cpassword" id="cpassword"
+                        placeholder="Confirm Password">
+              
+                      <div style="color: red;"
+                        *ngIf="RegisterForm.get('cpassword').hasError('required')  && RegisterForm.controls.cpassword.touched"
+                        class="alert alert-danger">
+                        <span *ngIf="RegisterForm.get('cpassword').hasError('required')">
+                           Re-enter your password !
+                        </span>
+                      </div>
+                      <div style="color: red;" *ngIf="RegisterForm.get('cpassword').hasError('notEquivalent') && RegisterForm.controls.cpassword.touched"
+                        class="alert alert-danger">
+                        Passwords dont match
+                      </div>
+                      </div>
+                    </div>
+
+                  
+
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button type="submit" [disabled]="RegisterForm.invalid" class="btn btn-primary btn-lg">Register</button>
+                  </div>
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Already have an account? <a 
+                    style="color: #393f81;"  routerLink="/login" >Login here</a></p>
+                </form>
+
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                  class="img-fluid" alt="Sample image">
+                   
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 

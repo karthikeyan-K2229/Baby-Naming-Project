@@ -1,0 +1,36 @@
+body{height: 100vh;
+    background-image: linear-gradient(rgba(46, 46, 155, 0.774), rgba(172, 172, 167, 0.5)),url('../../assets/image/Bg_admin.jpg');
+    
+    background-repeat: no-repeat;
+background-size: cover;}
+.navbar-brand{
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  .nav-item{
+    margin-left: 40px;
+    margin-right: 20px;
+  }
+  .navbar
+  {
+      
+  
+  margin-bottom: 50px;
+  
+  }
+  #cards:after {
+   
+    position: absolute;
+    opacity: 0;  
+    top: 5px;
+    right: -20px;
+    transition: 0.5s;
+  }
+  #cards:hover{
+    padding-right: 24px;
+    padding-left:8px;
+  }
+  #cardsś:hover:after {
+    opacity: 1;
+    right: 10px;
+  }

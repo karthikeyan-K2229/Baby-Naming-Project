@@ -1,0 +1,8 @@
+
+W	java:S1075"BConstructor has 16 parameters, which is greater than 7 authorized.(“³‹ç
+_	java:S107¾"=Method has 16 parameters, which is greater than 7 authorized.(£òÌšûÿÿÿÿ8•êŞª0
+~
+java:S4165C"hRemove this useless assignment; "loggedUser" already holds the assigned value along all execution paths.(°°ï
+W	java:S125Á"<This block of commented-out lines of code should be removed.(è—ˆÿÿÿÿÿ
+E
+java:S1656C"/Remove or correct this useless self-assignment.(°°ï

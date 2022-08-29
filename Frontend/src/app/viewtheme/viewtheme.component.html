@@ -1,0 +1,77 @@
+<body>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<nav class="navbar navbar-expand-md   " style="background-color: rebeccapurple;">
+  <a routerLink="/addtheme" class="navbar-brand" style="color: white;">Add Theme</a>
+  <button class="navbar-toggler" data-togglr="collapse"  data-target="#navcontent">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+   <div class="collapse navbar-collapse" id="nacontent">
+  <ul class="navbar-nav">
+  
+  <li class="nav-item">
+    <a class="nav-link" style="color: white; font-weight: 600; font-size: large;"  routerLink="/viewtheme"> View  Theme </a>
+</li>
+    <li class="nav-item">
+      <a class="nav-link" style="color: white; font-weight: 600; font-size: large;"  routerLink="/adminfood"> Add  Food </a>
+  </li>
+
+<li class="nav-item">
+  <a class="nav-link" style="color: white; font-weight: 600; font-size: large;"  routerLink="/viewfood"> View  Food </a>
+</li>
+       <li class="nav-item">
+          <a class="nav-link" style="color: white; font-weight: 600; font-size: large;"  routerLink="/addonrouter">  Add Add-ons</a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" style="color: white; font-weight: 600; font-size: large;"  routerLink="/viewfeedback"> FeedBack </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" style="color: white; font-weight: 600; font-size: large;"  routerLink="/displayuser"> View  Users </a>
+  </li>
+          <li class="nav-item ">
+            <a class="nav-link "  (click)="logout()" style="color: rgb(17, 15, 15); margin-left: 330px; font-size: large; font-weight: 700;"  >Logout</a>
+        </li>
+
+  </ul>
+</div>
+</nav>
+<div class="container" >
+
+    <div class="row">
+      <div class="col-md-3 mx-auto my-5" *ngFor="let theme of themes">
+        <div class="card" id="cardsśś" >
+          <img
+            src={{theme.imageUrl}} 
+            style="height: 250px; width:300px ;"
+            class="card-img-top"
+            alt="..."/>
+          
+          <div class="card-body">
+            <div><b >Theme Name: </b><b class="card-title">{{theme.themeName}}</b></div>
+            <div><b >Theme Cost: </b><i class="card-title">{{theme.themeCost  | currency: 'INR'}}</i></div>
+            <div><b >Photographer Details: </b><i class="card-title">{{theme.photographerDetails}}</i></div>
+            <div><b >Videographer Details: </b><i class="card-title">{{theme.videographerDetails}}</i></div>
+            <div><b >Return Gift: </b><i class="card-title">{{theme.returnGift}}</i></div>
+            <div><b >Theme Discription: </b><i class="card-title">{{theme.themeDiscription}}</i></div>
+            <div><button (click)="updateUser(theme.themeid)" class="btn btn-info mr-2">
+                Update
+              </button>
+              <button
+                (click)="deleteUser(theme.themeid)"
+                class="btn btn-danger"
+                style="margin: left 10px;"
+              >
+                Delete
+              </button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+     
+    </div></body>

@@ -1,0 +1,20 @@
+.navbar-brand{
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.nav-item{
+  margin-left: 40px;
+  margin-right: 20px;
+}
+.navbar
+{
+    
+
+margin-bottom: 50px;
+
+}
+  body{height: 100vh;
+   
+    background:  rgba(228, 228, 226, 0.856); 
+    background-repeat: no-repeat;
+background-size: cover;}

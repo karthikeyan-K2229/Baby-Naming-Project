@@ -1,0 +1,22 @@
+
+.bg{
+
+  background-image: url('https://media.istockphoto.com/photos/dark-blue-grunge-background-picture-id1015613584?k=20&m=1015613584&s=612x612&w=0&h=uwlrdDIb0d5YZKZeAzrd04ZQPI5tJvhyQwjI7fXRrhc=') ;
+  top: 0; 
+ left: 0; 
+   
+ height: 1000px;
+ 
+background-position: center; 
+background-repeat: no-repeat; 
+background-size:cover;
+
+}
+.navbar-brand{
+  margin-left: 170px;
+  margin-right: 150px;
+}
+.nav-item{
+   margin-left: 150px;
+   margin-right: 120px;
+}

@@ -1,0 +1,17 @@
+
+`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¢İé‚ûÿÿÿÿ
+[	java:S112!"FDefine and throw a dedicated exception instead of using a generic one.(²ÿÈ¸
+`	java:S112%"FDefine and throw a dedicated exception instead of using a generic one.(«Æšıÿÿÿÿ
+`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(—åƒ¦ûÿÿÿÿ
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“Ö÷‹
+u
+java:S14882"_Immediately return this expression instead of assigning it to the temporary variable "userObj".(üª›…
+w
+java:S14888"\Immediately return this expression instead of assigning it to the temporary variable "user".(¹Ñ„áùÿÿÿÿ
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¢ØÉ
+Y
+java:S1117'"CRename "passwordEncoder" which hides the field declared at line 15.(‡â÷‹
+f
+java:S1128"PRemove this unused import 'com.project.babynaming.entity.AuthenticationRequest'.(„ÙÓ
+Y
+java:S1128"CRemove this unused import 'com.project.babynaming.entity.FeedBack'.(¸€¸î

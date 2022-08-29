@@ -1,0 +1,33 @@
+body{
+    background-color: #7B93AA;
+    background-image: linear-gradient(rgba(46, 46, 155, 0.774), rgba(172, 172, 167, 0.5)),url('../../assets/image/Bg_admin.jpg');
+    
+    height: 1000px;
+   background-position: center; 
+   background-repeat: no-repeat; 
+   background-size: cover; 
+ }
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+ 
+input{
+  height: 45px;
+  width: 320px;
+}
+.navbar-brand{
+  margin-left: 50px;
+  margin-right: 70px;
+}
+.nav-item{
+   margin-left: 40px;
+   margin-right: 20px;
+}
+.navbar
+{
+    
+
+margin-bottom: 50px;
+
+}

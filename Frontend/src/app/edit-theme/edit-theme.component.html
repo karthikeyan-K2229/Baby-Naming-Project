@@ -1,0 +1,141 @@
+
+<body class="bg">
+  <nav class="navbar navbar-expand-md   " style="background-color: rgba(238, 234, 241, 0.589);">
+    <a href="#" class="navbar-brand" style="color: rgb(14, 12, 12); font-weight: 700;" routerLink="/userhomepage">Book Event</a>
+    <button class="navbar-toggler" data-togglr="collapse"  data-target="#navcontent">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+     <div class="collapse navbar-collapse" id="nacontent">
+    <ul class="navbar-nav">
+        
+         <li class="nav-item">
+            <a class="nav-link" style="color: rgb(14, 12, 12); font-size: large; font-weight: 700;"  routerLink="/viewbooking">View Book Event</a>
+        </li>
+        
+
+    </ul>
+</div>
+</nav>
+
+  
+  <div class="f" style="background-color:#e0dcdcb2;border-radius: 35px; height:750px; width: 1350px; margin-left: 350px; margin-right: 300px;">
+    <form   [formGroup]="editEvent" >
+
+    <h1 style="position: center; font-style:italic; margin-left:550px">Book Event</h1>
+  <div class="row">
+    <div class="col-5">
+      
+          <div class="form-group col-lg-6 " id="input-box">
+              
+              <!--<input type="text" class="form-control input-normal" style="border-radius: 10px;background-color: #d3d8e2; font-family: 'Ubuntu'; color: black;" placeholder="Enter theme name" id="themeName" name="themeName"[(ngModel)]="addmenu.themeName"/>-->
+
+
+              <input type="text" class="form-control" placeholder="Name" style="margin-left:75px;width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black;"formControlName="eventName" id="eventName" formControlName="eventName" />
+              <div *ngIf="editEvent.get('eventName').invalid && editEvent.controls.eventName.touched "
+              class="form-group" style="margin-left:75px;width:400px; height:50px;"class="alert alert-danger" >
+              <span style="color: red;" *ngIf="editEvent.get('eventName').hasError('required')">Event Name is Required !</span>
+            </div>
+          </div>
+          <div class="form-group col-lg-6 " id="input-box">
+              
+            <input type="text" class="form-control" placeholder="Enter applicant name"style="margin-left:75px;width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black;" formControlName="applicantName"id="applicantName"  formControlName="applicantName"/>
+            <div *ngIf="editEvent.get('applicantName').invalid && editEvent.controls.applicantName.touched "
+            class="form-group" style="margin-left:75px;width:400px; height:50px;"class="alert alert-danger">
+            <span style="color: red;" *ngIf="editEvent.get('applicantName').hasError('required')"> Name is Required !</span>
+          </div>
+            </div>
+          <div class="form-group col-lg-6 " id="input-box">
+              
+            <input  type="text" class="form-control" placeholder="Enter applicant address" style="margin-left:75px;width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black;"formControlName="applicantAddress" id="applicantAddress"  formControlName="applicantAddress"/>
+            <div *ngIf="editEvent.get('applicantAddress').invalid && editEvent.controls.applicantAddress.touched "
+            class="form-group" style="margin-left:75px;width:400px; height:50px;"class="alert alert-danger">
+            <span style="color: red;" *ngIf="editEvent.get('applicantAddress').hasError('required')"> Address is Required !</span>
+           </div>
+            </div>
+            <div class="form-group col-lg-6 " id="input-box">
+              
+              <input type="tel"   class="form-control" placeholder="Enter applicant Mobile Number" style="margin-left:75px;width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black;"formControlName="applicantMobileNo" id="applicantMobileNo" formControlName="applicantMobileNo"/>
+      <div *ngIf="editEvent.get('applicantMobileNo').invalid && editEvent.controls.applicantMobileNo.touched "
+      class="form-group"style="margin-left:75px;width:400px; height:50px;" class="alert alert-danger">
+      <span style="color: red;" *ngIf="editEvent.get('applicantMobileNo').hasError('required')"> phone number is Required !</span>
+      <span  style="color:red;" *ngIf="editEvent.get('applicantMobileNo').hasError('pattern')">
+        Invalid mobile number!
+      </span>
+     </div></div>
+     <div class="form-group col-lg-6 " id="input-box">
+              
+      <input   class="form-control" placeholder="Enter applicant email" style="margin-left:75px;width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black;"formControlName="applicantEmailId" id="applicantEmailId"  formControlName="applicantEmailId"/>
+      <div *ngIf="editEvent.get('applicantEmailId').invalid && editEvent.controls.applicantEmailId.touched "
+      class="form-group" style="margin-left:75px;width:400px; height:50px;"class="alert alert-danger">
+      <span style="color: red;" *ngIf="editEvent.get('applicantEmailId').hasError('required')"> email is Required !</span>
+      <span style="color: red;" *ngIf="editEvent.get('applicantEmailId').hasError('pattern')">  Invalid Email !</span>
+     </div>
+          
+    </div>
+    <div class="form-group col-lg-6 " id="input-box">
+              
+      <input  type="text" class="form-control" placeholder="Location" formControlName="eventAddress" id="eventAddress" style="margin-left:75px;width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black;" formControlName="eventAddress"/>
+      <div *ngIf="editEvent.get('eventAddress').invalid && editEvent.controls.eventAddress.touched "
+      class="form-group"style="margin-left:75px;width:400px; height:50px;" class="alert alert-danger">
+      <span style="color: red;" *ngIf="editEvent.get('eventAddress').hasError('required')"> location is Required !</span>
+     </div>
+          
+    </div></div>
+            
+    <div class="col-6">
+      
+      <div class="form-group col-lg-6 " id="input-box">
+              
+        <input  type="date" min="{{currentdate  | date:'yyyy-MM-dd'}}" style="width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black; margin-left: 200px;" class="form-control" placeholder="Enter the date of the event" formControlName="eventDate" id="eventDate"  formControlName="eventDate"/>
+        <div *ngIf="editEvent.get('eventDate').invalid && editEvent.controls.eventDate.touched "
+        class="form-group" style="width:400px; height:50px;margin-left: 200px;"class="alert alert-danger">
+        <span style="color: red;" *ngIf="editEvent.get('eventDate').hasError('required')"> Date is Required !</span>
+       </div>
+      </div>
+      <div class="form-group col-lg-6 " id="input-box">
+          
+        <input  type="time" class="form-control" style="width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black; margin-left: 200px;"placeholder="Enter the time of the event" formControlName="eventTime" id="eventTime"  formControlName="eventTime"/>
+        <div *ngIf="editEvent.get('eventTime').invalid && editEvent.controls.eventTime.touched "
+        class="form-group" style="width:400px; height:50px;margin-left: 200px;"class="alert alert-danger">
+        <span style="color: red;" *ngIf="editEvent.get('eventTime').hasError('required')"> Time is Required !</span>
+       </div>
+        </div>
+      <div class="form-group col-lg-6 " id="input-box">
+          
+        <input  type="number" class="form-control" style="width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black; margin-left: 200px;"placeholder="Enter the number of people" formControlName="noOfPeople" id="noOfPeople"  formControlName="noOfPeople"/>
+        <div *ngIf="editEvent.get('noOfPeople').invalid && editEvent.controls.noOfPeople.touched "
+        class="form-group" style="width:400px; height:50px;margin-left: 200px;"class="alert alert-danger">
+        <span style="color: red;" *ngIf="editEvent.get('noOfPeople').hasError('required')"> count is Required !</span>
+       </div>
+        </div>
+      <div class="form-group col-lg-6 " id="input-box">
+          
+        <input  type="text" class="form-control" placeholder="Enter the quantity of veg items" style="width:400px; height:50px; margin-left: 200px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black;"formControlName="quantityOfVeg" id="quantityOfVeg"  formControlName="quantityOfVeg"/>
+        <div *ngIf="editEvent.get('quantityOfVeg').invalid && editEvent.controls.quantityOfVeg.touched "
+        class="form-group" style="width:400px; height:50px;margin-left: 200px;"class="alert alert-danger">
+        <span style="color: red;width:400px; height:50px;" *ngIf="editEvent.get('quantityOfVeg').hasError('required')"> quantity of veg items is Required !</span>
+       </div>
+      </div>
+      <div class="form-group col-lg-6 " id="input-box">
+          
+        <input  type="text" class="form-control" style="width:400px; height:50px;border-radius: 10px;background-color: white; font-family: 'Ubuntu'; color: black; margin-left: 200px;"placeholder="Enter the quantity of nonveg items" formControlName="quantityOfNonVeg" id="quantityOfNonVeg"  formControlName="quantityOfNonVeg"/>
+<div *ngIf="editEvent.get('quantityOfNonVeg').invalid && editEvent.controls.quantityOfNonVeg.touched "
+class="form-group" style="width:400px; height:50px;margin-left: 200px;" class="alert alert-danger">
+<span style="color: red;width:400px; height:50px; " *ngIf="editEvent.get('quantityOfNonVeg').hasError('required')"> quantity of non veg items is Required !</span>
+</div>
+    </div>
+      <div class="form-group " id="input-box" style="margin-bottom: 100px;">
+        
+
+  <button [ngStyle]="{'background-color' : (editEvent.invalid) ? 'grey':'blue'}"  [disabled]="editEvent.invalid"  type="submit" id="bookEvent" class="bookEvent mb-2" style="color: beige; width:200px;height: 40px; border-radius: 25px;" (click)="UpdateEvent()">Update Event</button>
+  <button  type="submit" id="backEvent" class="backEvent" style="color: rgba(20, 20, 19, 0.863);width:200px;height: 40px; border-radius: 25px;" routerLink="/viewbooking">Back</button>  
+</div>
+  
+      
+    </div>
+   
+  </div>
+
+</form>
+
+</div></body>
